@@ -2,9 +2,10 @@
 
 A React UI component library built with **DaisyUI** and **TailwindCSS**. This library supports nearly all DaisyUI components, plus some special components like **ModelList** (an advanced data table with filtering, sorting, inline editing, and mass actions).
 
-[![npm version](https://badge.fury.io/js/@redshoes%2Fdaisy-ui-react.svg)](https://badge.fury.io/js/@redshoes%2Fdaisy-ui-react)
+[![npm package](https://img.shields.io/npm/v/@redshoes/daisy-ui-react.svg)](https://www.npmjs.com/package/@redshoes/daisy-ui-react)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![Chromatic](https://img.shields.io/badge/Chromatic-Visual%20Testing-orange.svg)](https://www.chromatic.com/builds?appId=68e02aa9c235ac40cd3fe573)
 
 ## ⚠️ Important Notice
 
@@ -323,6 +324,7 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 - **GitHub**: [erimeilis/daisy-ui-react](https://github.com/erimeilis/daisy-ui-react)
 - **Issues**: [Report a bug](https://github.com/erimeilis/daisy-ui-react/issues)
 - **Storybook**: [Component Documentation](https://erimeilis.github.io/daisy-ui-react)
+- **Chromatic**: [Visual Testing](https://www.chromatic.com/builds?appId=68e02aa9c235ac40cd3fe573)
 
 ---
 
