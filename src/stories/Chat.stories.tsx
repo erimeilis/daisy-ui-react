@@ -43,7 +43,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Sample data for stories
-const sampleMessages: ChatMessageType[] = [
+const sampleMessages: ChatMessage[] = [
   {
     id: '1',
     content: 'Hello! How can I help you today?',
@@ -78,7 +78,7 @@ const sampleMessages: ChatMessageType[] = [
   },
 ];
 
-const longConversation: ChatMessageType[] = [
+const longConversation: ChatMessage[] = [
   {
     id: '1',
     content: 'Welcome to our support chat! How can I assist you today?',
@@ -387,7 +387,7 @@ export const DefaultAvatarFallback: Story = {
 // Group chat simulation
 export const GroupChat: Story = {
   render: function Component() {
-    const [messages, setMessages] = React.useState<ChatMessageType[]>([
+    const [messages, setMessages] = React.useState<ChatMessage[]>([
       {
         id: '1',
         content: 'Hey everyone! How\'s the project going?',
@@ -415,7 +415,7 @@ export const GroupChat: Story = {
     ]);
 
     const addMessage = () => {
-      const newMessage: ChatMessageType = {
+      const newMessage: ChatMessage = {
         id: Date.now().toString(),
         content: 'This is a new message!',
         sender: { name: 'You', avatar: 'https://i.pravatar.cc/150?img=13' },
@@ -438,35 +438,32 @@ export const GroupChat: Story = {
   },
 };
 
-// Individual ChatMessage component
+// Individual messages displayed in Chat component
 export const IndividualMessage: Story = {
   render: () => (
     <div className="w-96 space-y-4">
-      <h3 className="font-semibold">Individual ChatMessage Components:</h3>
-      <ChatMessage
-        message={{
-          id: '1',
-          content: 'This is a standalone chat message',
-          sender: { name: 'John', avatar: 'https://i.pravatar.cc/150?img=14' },
-          position: 'start',
-          color: 'primary',
-          timestamp: '3:00 PM',
-        }}
-        showAvatar
-        showTimestamp
-        showName
-      />
-      <ChatMessage
-        message={{
-          id: '2',
-          content: 'Another standalone message',
-          sender: { name: 'Jane' },
-          position: 'end',
-          timestamp: '3:01 PM',
-        }}
-        showAvatar
-        showTimestamp
-        showName
+      <h3 className="font-semibold mb-4">Individual Chat Messages:</h3>
+      <Chat
+        messages={[
+          {
+            id: '1',
+            content: 'This is a standalone chat message',
+            sender: { name: 'John', avatar: 'https://i.pravatar.cc/150?img=14' },
+            position: 'start',
+            color: 'primary',
+            timestamp: '3:00 PM',
+          },
+          {
+            id: '2',
+            content: 'Another standalone message',
+            sender: { name: 'Jane' },
+            position: 'end',
+            timestamp: '3:01 PM',
+          },
+        ]}
+        showAvatars
+        showTimestamps
+        showNames
       />
     </div>
   ),
