@@ -64,11 +64,6 @@ Thumbs.db
 .env.test.local
 .env.production.local
 
-# Package manager files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
 # Documentation (project-specific)
 /CLAUDE.md
 /.claude/
