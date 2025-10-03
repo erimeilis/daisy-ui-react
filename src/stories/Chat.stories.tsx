@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Chat, ChatMessage, SimpleChatBubble, type ChatMessage as ChatMessageType } from '../components/ui/chat';
+import { Chat, SimpleChatBubble } from '@/components/ui/chat';
+import type { ChatMessage } from '@/components/ui/chat';
 
 const meta: Meta<typeof Chat> = {
   title: 'UI/Chat',
