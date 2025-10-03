@@ -423,4 +423,4 @@ function CircularCountdown({
     return <Countdown target={target} className={className} {...props} />
 }
 
-export { Countdown, MultiUnitCountdown, CircularCountdown, countdownVariants }
+export { Countdown, MultiUnitCountdown, CircularCountdown }

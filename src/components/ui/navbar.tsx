@@ -254,4 +254,4 @@ function NavbarMenu({
     )
 }
 
-export { Navbar, NavbarBrand, NavbarMenu, navbarVariants }
+export { Navbar, NavbarBrand, NavbarMenu }

@@ -1,54 +1,10 @@
-import * as React from 'react'
-import {cva, type VariantProps} from 'class-variance-authority'
 import {cn} from '@/lib/utils'
-
-const loadingVariants = cva(
-    'loading',
-    {
-        variants: {
-            // Type variants
-            type: {
-                spinner: 'loading-spinner',
-                dots: 'loading-dots',
-                ring: 'loading-ring',
-                ball: 'loading-ball',
-                bars: 'loading-bars',
-                infinity: 'loading-infinity',
-            },
-            // Size variants
-            size: {
-                xs: 'loading-xs',
-                sm: 'loading-sm',
-                md: 'loading-md',
-                lg: 'loading-lg',
-                xl: 'loading-xl',
-            },
-        },
-        defaultVariants: {
-            type: 'spinner',
-            size: 'md',
-        },
-    }
-)
-
-export interface LoadingProps extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof loadingVariants> {
-    color?: string
-}
-
-export interface LoadingOverlayProps extends LoadingProps {
-    show?: boolean
-    children?: React.ReactNode
-    overlayClassName?: string
-    backdrop?: boolean
-}
-
-export interface LoadingButtonProps extends LoadingProps {
-    loading?: boolean
-    children: React.ReactNode
-    buttonClassName?: string
-    disabled?: boolean
-}
+import { loadingVariants } from '@/types/loading'
+import type {
+    LoadingProps,
+    LoadingOverlayProps,
+    LoadingButtonProps
+} from '@/types/loading'
 
 /**
  * DaisyUI Loading Component
@@ -328,6 +284,5 @@ export {
     LoadingBall,
     LoadingBars,
     LoadingInfinity,
-    LoadingText,
-    loadingVariants
+    LoadingText
 }

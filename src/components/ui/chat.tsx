@@ -340,4 +340,4 @@ function SimpleChatBubble({
     )
 }
 
-export { Chat, ChatMessage, SimpleChatBubble, chatVariants, chatBubbleVariants }
+export { Chat, ChatMessage, SimpleChatBubble }

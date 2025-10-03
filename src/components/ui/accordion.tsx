@@ -105,4 +105,4 @@ function Accordion({
     )
 }
 
-export {Accordion, AccordionItem, accordionVariants}
+export {Accordion, AccordionItem}

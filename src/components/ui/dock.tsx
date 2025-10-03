@@ -378,4 +378,4 @@ function DockItem({
     )
 }
 
-export { Dock, DockItem, dockVariants, dockItemVariants }
+export { Dock, DockItem }

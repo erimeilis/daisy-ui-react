@@ -274,4 +274,4 @@ function Tab({
     )
 }
 
-export { Tabs, Tab, tabsVariants, tabVariants }
+export { Tabs, Tab }

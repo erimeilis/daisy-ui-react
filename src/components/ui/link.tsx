@@ -266,5 +266,4 @@ export {
     ButtonLink,
     NavLink,
     BreadcrumbLink,
-    linkVariants
 }

@@ -1,37 +1,12 @@
 import * as React from 'react'
-import {cva, type VariantProps} from 'class-variance-authority'
 import {cn} from '@/lib/utils'
-
-const breadcrumbsVariants = cva(
-    'breadcrumbs',
-    {
-        variants: {
-            // Size variants
-            size: {
-                xs: 'text-xs',
-                sm: 'text-sm',
-                md: 'text-base',
-                lg: 'text-lg',
-            },
-        },
-        defaultVariants: {
-            size: 'sm',
-        },
-    }
-)
-
-export interface BreadcrumbItem {
-    label: React.ReactNode
-    href?: string
-    icon?: React.ComponentType<{ className?: string }>
-    current?: boolean
-}
-
-export interface BreadcrumbsProps extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof breadcrumbsVariants> {
-    items: BreadcrumbItem[]
-    maxWidth?: string
-}
+import {
+    breadcrumbsVariants
+} from '@/types/breadcrumbs'
+import type {
+    BreadcrumbItem,
+    BreadcrumbsProps
+} from '@/types/breadcrumbs'
 
 /**
  * DaisyUI Breadcrumbs Component
@@ -142,4 +117,8 @@ function BreadcrumbItem({
     )
 }
 
-export {Breadcrumbs, SimpleBreadcrumbs, BreadcrumbItem, breadcrumbsVariants}
+export {
+    Breadcrumbs,
+    SimpleBreadcrumbs,
+    BreadcrumbItem
+}

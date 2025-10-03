@@ -527,5 +527,4 @@ export {
     AnimatedRadialProgress,
     ProgressRing,
     MultiProgressRing,
-    radialProgressVariants
 }

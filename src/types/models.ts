@@ -4,7 +4,7 @@ export interface BaseModel {
   id: string | number;
   createdAt?: string;
   updatedAt?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface PaginatedResponse<T> {
@@ -19,7 +19,7 @@ export interface PaginatedResponse<T> {
   prevPageUrl: string | null
   nextPageUrl: string | null
   lastPageUrl: string | null
-  meta?: any // Optional metadata field for table data responses (contains column definitions)
+  meta?: Record<string, unknown> // Optional metadata field for table data responses (contains column definitions)
 }
 
 export interface PaginationLink {
@@ -41,7 +41,7 @@ export interface ModelListProps<T extends BaseModel> {
   filters?: {
     sort?: string;
     direction?: 'asc' | 'desc';
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 
@@ -55,12 +55,12 @@ export interface ModelEditProps<T extends BaseModel> {
   processing?: boolean;
 }
 
-// Legacy interface aliases for backward compatibility
-export interface IPaginatedResponse<T> extends PaginatedResponse<T> {}
-export interface IMassAction extends MassAction {}
-export interface IModel extends BaseModel {}
-export interface IModelListProps<T extends BaseModel> extends ModelListProps<T> {}
-export interface IModelEditProps<T extends BaseModel> extends ModelEditProps<T> {}
+// Legacy type aliases for backward compatibility
+export type IPaginatedResponse<T> = PaginatedResponse<T>
+export type IMassAction = MassAction
+export type IModel = BaseModel
+export type IModelListProps<T extends BaseModel> = ModelListProps<T>
+export type IModelEditProps<T extends BaseModel> = ModelEditProps<T>
 
 // Specific model interfaces
 export interface User extends BaseModel {

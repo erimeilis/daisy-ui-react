@@ -483,7 +483,5 @@ export {
     IndicatorItem,
     NotificationIndicator,
     StatusIndicator,
-    MultiIndicator,
-    indicatorVariants,
-    indicatorItemVariants
+    MultiIndicator
 }

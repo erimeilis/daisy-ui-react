@@ -1,58 +1,28 @@
-import * as React from 'react'
-import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '@/lib/utils'
+import { cn } from '@/lib/utils'
+import {
+    progressVariants
+} from '@/types/progress'
+import type {
+    ProgressProps
+} from '@/types/progress'
 
-const progressVariants = cva(
-    'progress',
-    {
-        variants: {
-            // Color variants
-            color: {
-                default: '',
-                primary: 'progress-primary',
-                secondary: 'progress-secondary',
-                accent: 'progress-accent',
-                info: 'progress-info',
-                success: 'progress-success',
-                warning: 'progress-warning',
-                error: 'progress-error',
-            },
-            // Size variants
-            size: {
-                xs: 'progress-xs',
-                sm: 'progress-sm',
-                md: 'progress-md',
-                lg: 'progress-lg',
-                xl: 'progress-xl',
-            },
-        },
-        defaultVariants: {
-            color: 'default',
-            size: 'md',
-        },
-    }
-)
-
-export interface ProgressProps
-    extends VariantProps<typeof progressVariants>,
-    Omit<React.ProgressHTMLAttributes<HTMLProgressElement>, 'size' | 'color'> {
-    value?: number
-    max?: number
-    indeterminate?: boolean
-    showValue?: boolean
+// Define missing types locally
+interface ProgressWithLabelProps extends ProgressProps {
     label?: string
-}
-
-export interface ProgressWithLabelProps extends ProgressProps {
     labelPosition?: 'top' | 'bottom' | 'inline'
     labelClassName?: string
 }
 
-export interface CircularProgressProps extends Omit<ProgressProps, 'showValue'> {
+interface CircularProgressProps {
+    className?: string
+    color?: 'default' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
+    value?: number
+    max?: number
     strokeWidth?: number
     radius?: number
     showValue?: boolean
     valueClassName?: string
+    indeterminate?: boolean
 }
 
 /**
@@ -345,6 +315,5 @@ export {
     ProgressWithLabel,
     IndeterminateProgress,
     CircularProgress,
-    StepProgress,
-    progressVariants
+    StepProgress
 }

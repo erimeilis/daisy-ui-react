@@ -63,7 +63,6 @@ export function PrefetchLink({
     React.useEffect(() => {
         if (!prefetch || prefetchOn !== 'visible' || !linkRef.current) return
 
-        // eslint-disable-next-line no-undef
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -100,4 +99,5 @@ export function PrefetchLink({
     )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { usePrefetch }

@@ -157,4 +157,4 @@ function Collapse({
     )
 }
 
-export { Collapse, collapseVariants }
+export { Collapse }

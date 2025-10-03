@@ -249,6 +249,5 @@ export {
     ModifierKeys,
     KeyboardLayout,
     QwertyKeyboard,
-    InlineKbd,
-    kbdVariants
+    InlineKbd
 }

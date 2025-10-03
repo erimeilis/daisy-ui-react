@@ -1,48 +1,13 @@
 import * as React from 'react'
-import {cva, type VariantProps} from 'class-variance-authority'
 import {cn} from '@/lib/utils'
-
-const carouselVariants = cva(
-    'carousel',
-    {
-        variants: {
-            // Snap behavior variants
-            snap: {
-                start: '',
-                center: 'carousel-center',
-                end: 'carousel-end',
-            },
-            // Direction variants
-            direction: {
-                horizontal: '',
-                vertical: 'carousel-vertical',
-            },
-        },
-        defaultVariants: {
-            snap: 'start',
-            direction: 'horizontal',
-        },
-    }
-)
-
-export interface CarouselItemProps extends React.HTMLAttributes<HTMLDivElement> {
-    children: React.ReactNode
-}
-
-export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof carouselVariants> {
-    children: React.ReactNode
-    showNavigation?: boolean
-    showIndicators?: boolean
-    onSlideChange?: (index: number) => void
-}
-
-export interface CarouselWithNavigationProps extends Omit<CarouselProps, 'children'> {
-    slides: Array<{
-        id: string
-        content: React.ReactNode
-    }>
-}
+import {
+    carouselVariants
+} from '@/types/carousel'
+import type {
+    CarouselItemProps,
+    CarouselProps,
+    CarouselWithNavigationProps
+} from '@/types/carousel'
 
 /**
  * DaisyUI Carousel Item Component
@@ -197,4 +162,4 @@ function SimpleCarousel({
     )
 }
 
-export {Carousel, CarouselItem, CarouselWithNavigation, SimpleCarousel, carouselVariants}
+export {Carousel, CarouselItem, CarouselWithNavigation, SimpleCarousel}

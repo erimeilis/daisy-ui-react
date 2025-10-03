@@ -1,0 +1,24 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": false,
+    "strict": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "noUncheckedSideEffectImports": false
+  },
+  "include": [
+    "../src/**/*",
+    "../stories/**/*",
+    "./**/*"
+  ],
+  "exclude": [
+    "../node_modules"
+  ]
+}

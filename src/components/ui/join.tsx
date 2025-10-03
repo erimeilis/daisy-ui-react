@@ -541,7 +541,5 @@ export {
     ButtonJoin,
     InputJoin,
     SearchJoin,
-    SegmentedControl,
-    joinVariants,
-    joinItemVariants
+    SegmentedControl
 }

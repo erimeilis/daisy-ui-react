@@ -524,5 +524,4 @@ export {
     MenuSwap,
     PlayPauseSwap,
     TextSwap,
-    swapVariants
 }

@@ -1,64 +1,14 @@
-import * as React from 'react'
-import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '@/lib/utils'
-
-const labelVariants = cva(
-    'label',
-    {
-        variants: {
-            // Cursor variants
-            cursor: {
-                default: '',
-                pointer: 'cursor-pointer',
-            },
-        },
-        defaultVariants: {
-            cursor: 'default',
-        },
-    }
-)
-
-const labelTextVariants = cva(
-    'label-text',
-    {
-        variants: {
-            // Style variants
-            style: {
-                default: '',
-                alt: 'label-text-alt',
-            },
-        },
-        defaultVariants: {
-            style: 'default',
-        },
-    }
-)
-
-export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement>,
-    VariantProps<typeof labelVariants> {
-    text?: React.ReactNode
-    altText?: React.ReactNode
-    children?: React.ReactNode
-}
-
-export interface LabelTextProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'>,
-    VariantProps<typeof labelTextVariants> {
-    children: React.ReactNode
-}
-
-export interface FormLabelProps extends LabelProps {
-    required?: boolean
-    error?: boolean
-    errorMessage?: string
-    helpText?: string
-}
-
-export interface InputLabelProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'prefix'> {
-    prefix?: React.ReactNode
-    suffix?: React.ReactNode
-    children: React.ReactNode
-    className?: string
-}
+import { cn } from '@/lib/utils'
+import {
+    labelVariants,
+    labelTextVariants
+} from '@/types/label'
+import type {
+    LabelProps,
+    LabelTextProps,
+    FormLabelProps,
+    InputLabelProps
+} from '@/types/label'
 
 /**
  * DaisyUI Label Component
@@ -213,7 +163,5 @@ export {
     LabelText,
     FormLabel,
     InputLabel,
-    SimpleLabel,
-    labelVariants,
-    labelTextVariants
+    SimpleLabel
 }

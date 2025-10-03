@@ -470,5 +470,4 @@ export {
     IconMask,
     MaskGroup,
     DecorativeMask,
-    maskVariants
 }

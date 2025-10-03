@@ -552,6 +552,4 @@ export {
     ServiceStatus,
     UserStatus,
     StatusList,
-    statusVariants,
-    statusDotVariants
 }

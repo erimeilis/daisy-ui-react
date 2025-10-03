@@ -1,38 +1,21 @@
 import * as React from 'react'
-import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '@/lib/utils'
-import {Button, type ButtonProps} from './button'
+import { cn } from '@/lib/utils'
+import {
+    modalVariants
+} from '@/types/modal'
+import type {
+    ModalProps
+} from '@/types/modal'
+import { Button, type ButtonProps } from '@/components/form/button'
 
-const modalVariants = cva(
-    'modal',
-    {
-        variants: {
-            // Documented placement options from DaisyUI
-            placement: {
-                default: '',
-                top: 'modal-top',
-                middle: 'modal-middle',
-                bottom: 'modal-bottom',
-                start: 'modal-start',
-                end: 'modal-end',
-            },
-            // Modifier variants
-            modifier: {
-                default: '',
-                open: 'modal-open',
-            },
-        },
-        defaultVariants: {
-            placement: 'default',
-            modifier: 'default',
-        },
-    }
-)
+interface ModalBoxProps extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string
+    children: React.ReactNode
+}
 
-export type ModalProps = React.DialogHTMLAttributes<HTMLDialogElement> &
-    VariantProps<typeof modalVariants>
-
-export type ModalBoxProps = React.HTMLAttributes<HTMLDivElement>
+export interface ModalTriggerProps extends Omit<ButtonProps, 'asChild'> {
+    targetModal: string
+}
 
 /**
  * DaisyUI Modal Component
@@ -255,10 +238,6 @@ function ModalBackdrop({
     )
 }
 
-export interface ModalTriggerProps extends Omit<ButtonProps, 'asChild'> {
-    targetModal: string
-}
-
 /**
  * Modal Trigger Component
  *
@@ -286,24 +265,14 @@ export interface ModalTriggerProps extends Omit<ButtonProps, 'asChild'> {
  * >
  *   Open Modal
  * </ModalTrigger>
- *
- * @example
- * // Modal trigger with processing state
- * <ModalTrigger
- *   targetModal="my-modal"
- *   processing={isLoading}
- *   color="success"
- * >
- *   Save and Open
- * </ModalTrigger>
  */
 function ModalTrigger({
-                          targetModal,
-                          className,
-                          onClick,
-                          children,
-                          ...props
-                      }: ModalTriggerProps) {
+    targetModal,
+    className,
+    onClick,
+    children,
+    ...props
+}: ModalTriggerProps) {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         // Call the provided onClick handler if it exists
         onClick?.(e)
@@ -332,5 +301,4 @@ export {
     ModalAction,
     ModalBackdrop,
     ModalTrigger,
-    modalVariants,
 }

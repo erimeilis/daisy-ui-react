@@ -579,7 +579,5 @@ export {
     Footer,
     FooterSection,
     SimpleFooter,
-    AppFooter,
-    footerVariants,
-    footerTitleVariants
+    AppFooter
 }
