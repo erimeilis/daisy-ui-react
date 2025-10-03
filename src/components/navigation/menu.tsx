@@ -10,8 +10,8 @@ import type {
     MenuTitleProps,
     MenuDetailsProps,
     NavigationMenuProps,
-    VariantProps
 } from '@/types/menu'
+import type { VariantProps } from 'class-variance-authority'
 
 // Hook for prefetching pages
 function usePrefetch() {
@@ -326,3 +326,5 @@ export {
     SidebarMenu,
     BreadcrumbMenu
 }
+
+export type { MenuProps, MenuItemProps, MenuTitleProps, MenuDetailsProps, NavigationMenuProps }

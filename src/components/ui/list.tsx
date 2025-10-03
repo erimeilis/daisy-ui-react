@@ -9,7 +9,7 @@ import type {
     ListProps,
     ListItemProps,
     SimpleListProps,
-    ListItemType
+    ListItem
 } from '@/types/list'
 
 // Define missing types locally
@@ -202,7 +202,7 @@ function SimpleList({
     onItemClick,
     ...props
 }: SimpleListProps) {
-    const listItems: ListItemType[] = items.map((item, index) => ({
+    const listItems: ListItem[] = items.map((item, index) => ({
         id: index.toString(),
         content: item,
         onClick: clickable ? () => onItemClick?.(index, item) : undefined,
@@ -227,7 +227,7 @@ function NavigationList({
     showBadges = true,
     ...props
 }: NavigationListProps) {
-    const listItems: ListItemType[] = items.map((item, index) => ({
+    const listItems: ListItem[] = items.map((item, index) => ({
         id: index.toString(),
         content: item.label,
         leading: showIcons && item.icon ? React.createElement(item.icon, { className: "w-4 h-4" }) : undefined,
@@ -250,7 +250,7 @@ function DataList({
     showIcons = false,
     ...props
 }: DataListProps) {
-    const listItems: ListItemType[] = data.map((item, index) => ({
+    const listItems: ListItem[] = data.map((item, index) => ({
         id: index.toString(),
         content: (
             <div className="flex justify-between items-start w-full">

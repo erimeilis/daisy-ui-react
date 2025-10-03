@@ -190,6 +190,15 @@ export type {
     CardFigureProps
 } from './types/card';
 
+export { Chat, SimpleChatBubble } from './components/ui/chat';
+export type { ChatProps, ChatMessage, ChatMessageProps } from './components/ui/chat';
+
+export { Dock } from './components/ui/dock';
+export type { DockProps, DockItem, DockItemProps } from './components/ui/dock';
+
+export { Footer, FooterSectionComponent, SimpleFooter, AppFooter } from './components/ui/footer';
+export type { FooterProps, FooterSection, FooterSectionProps } from './components/ui/footer';
+
 export {
     Avatar,
     AvatarGroup,
@@ -286,10 +295,10 @@ export {
 } from './components/navigation/menu';
 export type { MenuProps, MenuItemProps, MenuTitleProps, MenuDetailsProps, NavigationMenuProps } from './components/navigation/menu';
 
-export { Navbar, NavbarBrand, NavbarMenu, navbarVariants } from './components/navigation/navbar';
+export { Navbar, NavbarBrand, NavbarMenu } from './components/navigation/navbar';
 export type { NavbarProps, NavbarBrandProps, NavbarMenuProps } from './components/navigation/navbar';
 
-export { Breadcrumbs, SimpleBreadcrumbs, BreadcrumbItem, breadcrumbsVariants } from './components/navigation/breadcrumbs';
+export { Breadcrumbs, SimpleBreadcrumbs, BreadcrumbItem } from './components/navigation/breadcrumbs';
 export type { BreadcrumbsProps } from './components/navigation/breadcrumbs';
 
 // Utility functions

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@/lib/utils'
 import { navbarVariants } from '@/types/navbar'
@@ -143,3 +142,4 @@ function NavbarMenu({
 }
 
 export { Navbar, NavbarBrand, NavbarMenu }
+export type { NavbarProps, NavbarBrandProps, NavbarMenuProps }

@@ -384,7 +384,7 @@ function ModelTableRow<T extends IModel>({
 }: {
     item: T;
     columns: IColumnDefinition<T>[];
-    selectedItems: Set<number>;
+    selectedItems: Set<string | number>;
     editingCell: EditingCell | null;
     editValue: string;
     editingError: string;
@@ -393,7 +393,7 @@ function ModelTableRow<T extends IModel>({
     editRoute: (id: number | string) => string;
     deleteRoute: (id: number | string) => string;
     useLegacyRendering: boolean;
-    onItemSelect: (itemId: number, checked: boolean) => void;
+    onItemSelect: (itemId: string | number, checked: boolean) => void;
     onStartEditing: (item: T, column: IColumnDefinition<T>) => void;
     onSaveEditing: (valueToSave?: string) => Promise<void>;
     onSetEditValue: (value: string) => void;
@@ -516,7 +516,6 @@ export function ModelTableBody<T extends IModel>({
                     <AddNewRowComponent
                         columns={columns as IColumnDefinition<IModel>[]}
                         newRowData={newRowData || {}}
-                        _newRowError={newRowError || ''}
                         isSavingNewRow={isSavingNewRow || false}
                         onUpdateNewRowData={onUpdateNewRowData}
                         onSaveNewRow={onSaveNewRow}

@@ -122,3 +122,5 @@ export {
     SimpleBreadcrumbs,
     BreadcrumbItem
 }
+
+export type { BreadcrumbsProps }

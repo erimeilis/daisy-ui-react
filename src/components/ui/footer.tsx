@@ -577,7 +577,7 @@ function AppFooter({
 
 export {
     Footer,
-    FooterSection,
+    FooterSection as FooterSectionComponent,
     SimpleFooter,
     AppFooter
 }

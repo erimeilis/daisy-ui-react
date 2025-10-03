@@ -11,10 +11,13 @@ export default defineConfig({
     tailwindcss(),
     dts({
       include: ['src/**/*'],
-      exclude: ['src/**/*.stories.*', 'src/**/*.test.*'],
+      exclude: ['src/**/*.stories.*', 'src/**/*.test.*', 'src/main.tsx', 'src/App.tsx'],
       tsconfigPath: './tsconfig.build.json',
       skipDiagnostics: true,
       logDiagnostics: false,
+      compilerOptions: {
+        declarationMap: false,
+      }
     })
   ],
   resolve: {

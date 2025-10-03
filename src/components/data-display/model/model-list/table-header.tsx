@@ -1,4 +1,4 @@
-import type { Icon } from '@/components/ui/icon';
+import { Icon } from '@/components/ui/icon';
 import { Checkbox } from '@/components/form/checkbox';
 import { TableCell, TableHead, TableHeaderCell, TableRow } from '@/components/data-display/table';
 import type { IModel } from '@/types/models';

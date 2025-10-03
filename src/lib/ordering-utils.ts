@@ -13,7 +13,7 @@ export function toggleSortDirection(current: SortDirection): SortDirection {
   return null;
 }
 
-export function sortData<T>(data: T[], sortConfig: SortConfig): T[] {
+export function sortData<T extends Record<string, unknown>>(data: T[], sortConfig: SortConfig): T[] {
   if (!sortConfig.direction || !sortConfig.field) {
     return data;
   }
@@ -35,7 +35,12 @@ export function sortData<T>(data: T[], sortConfig: SortConfig): T[] {
 }
 
 function getNestedValue(obj: Record<string, unknown>, path: string): unknown {
-  return path.split('.').reduce((current, key) => current?.[key], obj);
+  return path.split('.').reduce<unknown>((current, key) => {
+    if (current && typeof current === 'object' && key in current) {
+      return (current as Record<string, unknown>)[key];
+    }
+    return undefined;
+  }, obj);
 }
 
 export function getSortIcon(direction: SortDirection): string {

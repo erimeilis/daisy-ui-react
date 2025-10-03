@@ -6,7 +6,8 @@ import {
 import type {
     ModalProps
 } from '@/types/modal'
-import { Button, type ButtonProps } from '@/components/form/button'
+import { Button } from '@/components/form/button'
+import type { ButtonProps } from '@/types/button'
 
 interface ModalBoxProps extends React.HTMLAttributes<HTMLDivElement> {
     className?: string
@@ -295,8 +296,22 @@ function ModalTrigger({
     )
 }
 
+// Create compound component pattern
+const ModalWithSubcomponents = Object.assign(Modal, {
+    Box: ModalBox,
+    Header: ({ children, className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+        <h3 className={cn('text-lg font-bold', className)} {...props}>{children}</h3>
+    ),
+    Body: ({ children, className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+        <div className={cn('py-4', className)} {...props}>{children}</div>
+    ),
+    Actions: ModalAction,
+    Backdrop: ModalBackdrop,
+    Trigger: ModalTrigger,
+})
+
 export {
-    Modal,
+    ModalWithSubcomponents as Modal,
     ModalBox,
     ModalAction,
     ModalBackdrop,

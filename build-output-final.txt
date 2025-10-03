@@ -1,0 +1,41 @@
+
+> @redshoes/daisy-ui-react@0.5.4 build:lib
+> vite build --mode lib
+
+vite v7.1.7 building for lib...
+[96msrc/components/ui/chat.tsx[0m:[93m83[0m:[93m15[0m - [91merror[0m[90m TS4033: [0mProperty 'messages' of exported interface has or is using private name 'ChatMessage'.
+
+[7m83[0m     messages: ChatMessage[]
+[7m  [0m [91m              ~~~~~~~~~~~[0m
+[96msrc/components/ui/chat.tsx[0m:[93m203[0m:[93m14[0m - [91merror[0m[90m TS4033: [0mProperty 'message' of exported interface has or is using private name 'ChatMessage'.
+
+[7m203[0m     message: ChatMessage
+[7m   [0m [91m             ~~~~~~~~~~~[0m
+[96msrc/components/ui/dock.tsx[0m:[93m122[0m:[93m12[0m - [91merror[0m[90m TS4033: [0mProperty 'items' of exported interface has or is using private name 'DockItem'.
+
+[7m122[0m     items: DockItem[]
+[7m   [0m [91m           ~~~~~~~~[0m
+[96msrc/components/ui/dock.tsx[0m:[93m130[0m:[93m42[0m - [91merror[0m[90m TS4078: [0mParameter 'item' of exported function has or is using private name 'DockItem'.
+
+[7m130[0m     onItemClick?: (itemId: string, item: DockItem) => void
+[7m   [0m [91m                                         ~~~~~~~~[0m
+[96msrc/components/ui/footer.tsx[0m:[93m95[0m:[93m16[0m - [91merror[0m[90m TS4033: [0mProperty 'sections' of exported interface has or is using private name 'FooterSection'.
+
+[7m95[0m     sections?: FooterSection[]
+[7m  [0m [91m               ~~~~~~~~~~~~~[0m
+[96msrc/components/ui/footer.tsx[0m:[93m347[0m:[93m13[0m - [91merror[0m[90m TS4033: [0mProperty 'links' of exported interface has or is using private name 'FooterSection'.
+
+[7m347[0m     links?: FooterSection['links']
+[7m   [0m [91m            ~~~~~~~~~~~~~[0m
+
+transforming...
+✓ 6255 modules transformed.
+rendering chunks...
+
+[vite:dts] Start generate declaration files...
+computing gzip size...
+dist/index.esm.js  203.61 kB │ gzip: 43.33 kB
+[vite:dts] Declaration files built in 2591ms.
+
+dist/index.cjs.js  114.51 kB │ gzip: 33.98 kB
+✓ built in 4.50s
